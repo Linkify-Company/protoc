@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package notificator;
+
+option go_package = "gen/go/v1/auth";
+
+service Registration {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message RegisterRequest {
+  string email = 1;
+  string phone = 2;
+  string password = 3;
+}
+
+message RegisterResponse {
+  int64 user_id = 1;
+  string email = 2;
+  string phone = 3;
+  string token = 4;
+}
